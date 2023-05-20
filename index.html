@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel</title>
+    <link rel="icon" href="/assets/images/logo.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter@wght400;500;600;700;800">
+</head>
+<body>
+    <div class="navbar-container">
+        <div class="mainLogo">
+            <img src="assets/images/logo.svg" alt="Wheel Logo">
+        </div>
+        <nav class="navbar" role="navigation">
+            <ul id="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">New</li>
+                <li class="nav-item">Popular</li>
+                <li class="nav-item">Trending</li>
+                <li class="nav-item">Categories</li>
+            </ul>
+        </nav>
+        <!-- <span id="menu-icon">
+            <img src="../assets/images/icon-menu.svg" alt="Menu Icon">
+        </span> -->
+        <div class="nav-menu-open-overlay"></div>
+        <div class="menu-button" tabindex="0">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="navbar-menu" tabindex="0">
+            <ul>
+                <li>Home</li>
+                <li>New</li>
+                <li>Popular</li>
+                <li>Trending</li>
+                <li>Categories</li>
+            </ul>
+        </div>
+    </div>  
+    <section class="main-and-new-articles-container">
+        <section>
+            <img src="/assets/images/image-web-3-mobile.jpg" alt="Geometric Wallpaper" class="main-article-img-mobile">
+            <img src="/assets/images/image-web-3-desktop.jpg" alt="Geometric Wallpaper" class="main-article-img-desktop">
+            <div class="main-article">
+                <div class="main-article-title">The Bright Future of Web 3.0?</div>
+                <div class="main-article-text-container">
+                    <div class="text-body">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+                        But is it really fulfilling its promise?</div>
+                    <button class="main-read-more">READ MORE</button>
+                </div>
+            </div>    
+        </section>
+        <section class="new-articles-section">
+            <div class="new-articles-text-container">
+                <div class="section-title">New</div>
+                <div class="new-article">
+                    <div class="new-article-title">Hydrogen VS Electric Cars</div>
+                    <div class="text-body">Will hydrogen-fueled cars ever catch up to EVs?</div>
+                </div>
+                <div class="new-article">
+                    <div class="new-article-title">The Downsides of AI Artistry</div>
+                    <div class="text-body">What are the possible adverse effects of on-demand AI image generation?</div>
+                </div>
+                <div class="new-article last-new-article">
+                    <div class="new-article-title">Is VC Funding Drying Up?</div>
+                    <div class="text-body">Private funding by VC firms is down 50% YOY. We take a look at what that means.</div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="other-articles-section">
+        <article class="other-article-card first-other-article-card">
+            <img src="/assets/images/image-retro-pcs.jpg" alt="Retro PCs">
+            <div class="other-article-text-container">
+                <div class="other-article-num">01</div> 
+                <div class="other-article-title">Reviving Retro PCs</div>
+                <div class="text-body">What happens when old PCs are given modern upgrades?</div>
+            </div>
+        </article>
+        <article class="other-article-card">
+            <img src="/assets/images/image-top-laptops.jpg" alt="Retro PCs">
+            <div class="other-article-text-container">
+                <div class="other-article-num">02</div> 
+                <div class="other-article-title">Top 10 Laptops of 2022</div>
+                <div class="text-body">Our best picks for various needs and budgets.</div>
+            </div>
+        </article>
+        <article class="other-article-card">
+            <img src="/assets/images/image-gaming-growth.jpg" alt="Retro PCs">
+            <div class="other-article-text-container">
+                <div class="other-article-num">03</div> 
+                <div class="other-article-title">The Growth of Gaming</div>
+                <div class="text-body">How the pandemic has sparked fresh opportunities.</div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
+<script>
+    var menuIcon = document.getElementsByClassName("menu-button")[0];
+    var menuOpenElements = document.querySelectorAll("body, .menu-button, .icon-bar, .navbar-menu, .nav-menu-open-overlay");
+    menuIcon.addEventListener("click", openMenu);
+
+    function openMenu() {
+        // menuIcon.classList.toggle("menu-open");
+        for (const element of menuOpenElements) {
+            element.classList.toggle("menu-open");
+        }    
+    }
+
+    var menuIconClose = document.getElementsByClassName("menu-button-close")[0];
+    menuIconClose.addEventListener("click", closeMenu);
+    function closeMenu() {
+        menuIcon.classList.remove("menu-button-close");
+        document.getElementsByClassName("icon-bar")[0].style.transform = "none";
+        document.getElementsByClassName("icon-bar")[1].style.opacity = "1";
+        document.getElementsByClassName("icon-bar")[2].style.transform = "none";
+    }
+</script>
